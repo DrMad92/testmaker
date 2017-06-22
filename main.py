@@ -1,30 +1,27 @@
-from quiz import *
-from settings import *
-from fileoperation import *
+import quiz as q
+import settings as s
+import fileoperation as fileop
+
 
 def main():
     print('Hello. This is Testmaker\n')
 
-    read_file()
+    fileop.read_file()
+    print('Total number of questions:', len(s.word_list))
+    user_input = 0
+    while user_input > 2 or user_input < 1:
+        try:
+            print('\n1)Start quiz\n2)Add new translations')
+            user_input = int(input('\n' + s.color.BOLD + 'Choose an option:' + s.color.END))
+        except:
+            print('Enter valid option')
 
-    random.seed()
+    if user_input == 1:
+        q.quiz()
+    elif user_input == 2:
+        fileop.write_file()
 
-    question_list = random.sample(word_list, max_questions)
-
-    quiz(question_list)
-    true_answers = 0
-    wrong_answers = 0
-    for x in answer_list:
-        if x['correct']:
-            true_answers += 1
-        else:
-            wrong_answers += 1
-
-    print('\nResult: True', true_answers, 'False', wrong_answers + '\n')
-
-    for x in answer_list:
-        if not x['correct']:
-            print(x['question'], color.RED + color.BOLD + 'WRONG!' + color.END, 'Correct answer:', x['correct_answer'])
+    return
 
 if __name__ == '__main__':
     main()
