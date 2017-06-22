@@ -9,7 +9,8 @@ def read_file():
             f = csv.reader(csvfile)
             for k, v in f:
                 word = {k: v}
-                word_list.append(word)
+                if word not in word_list:
+                    word_list.append(word)
     except Exception as e:
         print(e)
         exit(2)
@@ -18,9 +19,12 @@ def read_file():
 
 def write_file():
     try:
-        with open(fname, 'a') as csvfile:
+        with open(fname, 'a', newline='') as csvfile:
             f = csv.writer(csvfile)
             f.writerow([input('Original: '), input('Translation: ')])
     except Exception as e:
         print(e)
         exit(2)
+
+def delete_file():
+    pass
