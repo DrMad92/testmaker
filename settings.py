@@ -1,5 +1,6 @@
 import random
 import csv
+import shelve
 
 class color:
    PURPLE = '\033[95m'
@@ -17,5 +18,5 @@ class color:
 max_questions = 5  # must be less than total dictionary size
 max_choices = 5  # number of choices in one question
 
-word_list = []
+word_list = {}
 answer_list = []

@@ -1,30 +1,74 @@
-from settings import *
+import settings as s
 
-fname = 'french phrases.csv'
+filename = 'word_database'
+
+
+def search_word(key):
+    for word in s.word_list:
+        print('Comparing', word)
+        if key in word:
+            print('found')
+            return True
+    return False
 
 
 def read_file():
     try:
-        with open(fname, 'r') as csvfile:
-            f = csv.reader(csvfile)
-            for k, v in f:
-                word = {k: v}
-                if word not in word_list:
-                    word_list.append(word)
+        db = s.shelve.open(filename)
+        # for k, v in db.items():
+        #     word = {k: v}
+        #     if word not in word_list:
+        #         word_list.append(word)
+        s.word_list = db
+        db.close()
     except Exception as e:
-        print(e)
-        exit(2)
+        print('Error in read_file() -', e)
+        return
     return
 
 
 def write_file():
     try:
-        with open(fname, 'a', newline='') as csvfile:
-            f = csv.writer(csvfile)
-            f.writerow([input('Original: '), input('Translation: ')])
+        db = s.shelve.open(filename, writeback=True)
+        word = {input('Original: '): input('Translation: ')}
+        if word not in s.word_list:
+            k, v = list(word.items())[0]
+            db[k] = v
+        else:
+            print('Word already exists')
+        db.sync()
+        db.close()
     except Exception as e:
-        print(e)
-        exit(2)
+        print('Error in write_file() -', e)
+        return
+
 
 def delete_file():
-    pass
+    try:
+        db = s.shelve.open(filename)
+        print('All words:')
+        for word in db:
+            print(word, '-', db[word])
+        user_choice = input('Enter original to delete:')
+        if search_word(user_choice):
+            db.pop(user_choice)
+            s.word_list.pop(user_choice)
+            print('Success')
+        else:
+            print('Does not exist')
+        db.close()
+    except Exception as e:
+        print('Error in delete_file -', e)
+        return
+
+
+def show_file():
+    try:
+        db = s.shelve.open(filename)
+        print('All words:')
+        for word in db:
+            print(word, '-', db[word])
+        db.close()
+    except Exception as e:
+        print('Error in show_file() -', e)
+        return

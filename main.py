@@ -21,9 +21,9 @@ def main():
             q.quiz()
         elif user_input == 2:
             dict_input = 0
-            while dict_input > 2 or dict_input < 1:
+            while dict_input > 3 or dict_input < 1:
                 try:
-                    print('\n1)Add new word\n2)Delete word\n3)Go back')
+                    print('\n1)Add new word\n2)Delete word\n3)Show list\n4)Go back')
                     dict_input = int(input('\n' + s.color.BOLD + 'Choose an option:' + s.color.END))
                 except:
                     print('Enter valid option')
@@ -31,6 +31,8 @@ def main():
                     fileop.write_file()
                 elif dict_input == 2:
                     fileop.delete_file()
+                elif dict_input == 3:
+                    fileop.show_file()
                 else: break
         elif user_input == 3:
             pass
