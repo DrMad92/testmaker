@@ -8,7 +8,7 @@ def search_word(key):
         print('Comparing', word)
         if key in word:
             s.word_list = [d for d in s.word_list if d.get(key) != list(word.values())[0]]
-            print('found and deleted')
+            print('Found and Deleted!!!')
             return True
     return False
 
