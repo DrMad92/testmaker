@@ -27,13 +27,13 @@ def main():
                     dict_input = int(input('\n' + s.color.BOLD + 'Choose an option:' + s.color.END))
                 except:
                     print('Enter valid option')
-                if dict_input == 1:
-                    fileop.write_file()
-                elif dict_input == 2:
-                    fileop.delete_file()
-                elif dict_input == 3:
-                    fileop.show_file()
-                else: break
+            if dict_input == 1:
+                fileop.write_file()
+            elif dict_input == 2:
+                fileop.delete_file()
+            elif dict_input == 3:
+                fileop.show_file()
+            else: break
         elif user_input == 3:
             pass
         else: return

@@ -7,7 +7,8 @@ def search_word(key):
     for word in s.word_list:
         print('Comparing', word)
         if key in word:
-            print('found')
+            s.word_list = [d for d in s.word_list if d.get(key) != list(word.values())[0]]
+            print('found and deleted')
             return True
     return False
 
@@ -15,11 +16,10 @@ def search_word(key):
 def read_file():
     try:
         db = s.shelve.open(filename)
-        # for k, v in db.items():
-        #     word = {k: v}
-        #     if word not in word_list:
-        #         word_list.append(word)
-        s.word_list = db
+        for k, v in db.items():
+            word = {k: v}
+            if word not in s.word_list:
+                s.word_list.append(word)
         db.close()
     except Exception as e:
         print('Error in read_file() -', e)
@@ -52,7 +52,6 @@ def delete_file():
         user_choice = input('Enter original to delete:')
         if search_word(user_choice):
             db.pop(user_choice)
-            s.word_list.pop(user_choice)
             print('Success')
         else:
             print('Does not exist')
@@ -64,11 +63,9 @@ def delete_file():
 
 def show_file():
     try:
-        db = s.shelve.open(filename)
         print('All words:')
-        for word in db:
-            print(word, '-', db[word])
-        db.close()
+        for word in s.word_list:
+            print(list(word.keys())[0], '-', list(word.values())[0])
     except Exception as e:
         print('Error in show_file() -', e)
         return
