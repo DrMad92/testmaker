@@ -27,6 +27,6 @@ filename = 'dictionary.db'
 conn = sqlite3.connect(filename)
 cur = conn.cursor()
 
-conn.close()
+category_list = []
 word_list = []
 answer_list = []

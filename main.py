@@ -7,8 +7,6 @@ def main():
     print('Hello. This is Testmaker\n')
 
     while True:
-        fileop.read_file()
-        print('Total number of questions:', len(s.word_list))
         main_input = 0
         while main_input > 4 or main_input < 1:
             try:
@@ -49,9 +47,9 @@ def main():
                 except:
                     print('Enter valid option')
             if dict_input == 1:
-                fileop.view_dict()  # Fix this
+                fileop.view_dict()
             elif dict_input == 2:
-                fileop.add_category()  # Fix this
+                fileop.add_category()
             elif dict_input == 3:
                 cat_input = 0
                 while cat_input > 5 or cat_input < 1:
@@ -73,14 +71,15 @@ def main():
                 elif cat_input == 4:
                     fileop.delete_word()  # Fix this
                 else:
-                    pass  # Go to manage dictonary menu
-            elif cat_input == 4:
-                fileop.delete_category()  # Fix this
+                    pass  # Go to manage dictionary menu
+            elif dict_input == 4:
+                fileop.delete_category()
             else:
                 pass  # Go to main menu
         elif main_input == 3:
-            pass  # Statistics
+            pass  # Fix this - Statistics
         else:
+            s.conn.close()
             return
 
 
