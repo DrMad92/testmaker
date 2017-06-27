@@ -47,7 +47,7 @@ def main():
                 except:
                     print('Enter valid option')
             if dict_input == 1:
-                fileop.view_dict()
+                fileop.view_dict()  # Make it beautiful
             elif dict_input == 2:
                 fileop.add_category()
             elif dict_input == 3:
@@ -63,9 +63,9 @@ def main():
                     except:
                         print('Enter valid option')
                 if cat_input == 1:
-                    fileop.rename_category()  # Fix this
+                    fileop.rename_category()
                 elif cat_input == 2:
-                    fileop.add_word()  # Fix this
+                    fileop.add_word()
                 elif cat_input == 3:
                     fileop.edit_word()  # Fix this
                 elif cat_input == 4:
