@@ -67,7 +67,7 @@ def main():
                 elif cat_input == 2:
                     fileop.add_word()
                 elif cat_input == 3:
-                    fileop.edit_word()  # Fix this
+                    fileop.edit_word()
                 elif cat_input == 4:
                     fileop.delete_word()  # Fix this
                 else:

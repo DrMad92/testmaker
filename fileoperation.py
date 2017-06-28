@@ -101,6 +101,43 @@ def add_word():
     if new_id is None:
         new_id = max(id_list) + 1
 
-    values = (new_id, new_original, new_translation)
+    values = (str(new_id), new_original, new_translation)
     s.cur.execute('INSERT INTO ' + name + ' VALUES (?,?,?)', values)
+    s.conn.commit()
+
+
+def edit_word():
+    get_categories()
+    print('Categories:')
+    for x in s.category_list:
+        print(x)
+
+    name = input('Choose category: ')
+    if name not in s.category_list:
+        print("Doesn't exist. Going back to menu")
+        return
+
+    print('\nCategory: ' + name + ':')
+    print('\nId----Original----Translation\n')
+    for row in s.cur.execute('SELECT * FROM ' + name):
+        print(row[0], row[1], row[2])
+
+    edit_id = str(input('\nEnter id to edit: '))
+    s.cur.execute('SELECT * FROM ' + name + ' WHERE Id = \"' + edit_id + '\"')
+    temp_list = s.cur.fetchall()
+    if len(temp_list) == 0:
+        print('Id does not exist. Going back to menu')
+        return
+
+    new_original = input('Enter original: ')
+    s.cur.execute('SELECT * FROM ' + name + ' WHERE Original = \"' + new_original + '\"')
+    temp_list = s.cur.fetchall()
+    if len(temp_list) != 0:
+        print('Word already exists. Going back to menu')
+        return
+
+    new_translation = input('Enter translation: ')
+    s.cur.execute(
+        'UPDATE {0} SET Original = \"{1}\", Translation = \"{2}\" WHERE Id = \"{3}\"'.format(name, new_original,
+                                                                                             new_translation, edit_id))
     s.conn.commit()
