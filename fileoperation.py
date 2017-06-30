@@ -12,7 +12,7 @@ def view_dict():
     for cat in s.category_list:
         print('\nCategory: ' + cat + ':')
         print('\nId----Original----Translation\n')
-        for row in s.cur.execute('SELECT * FROM ' + cat + ' ORDER BY Id ASC'):
+        for row in s.cur.execute('SELECT * FROM ' + cat + ' ORDER BY Original ASC'):
             print(row[0], row[1], row[2])
 
 
@@ -130,7 +130,7 @@ def edit_word():
         return
 
     new_original = input('Enter original: ')
-    s.cur.execute('SELECT * FROM ' + name + ' WHERE Original = \"' + new_original + '\"')
+    s.cur.execute('SELECT * FROM {0} WHERE Original = \"{1}\"'.format(name, new_original))
     temp_list = s.cur.fetchall()
     if len(temp_list) != 0:
         print('Word already exists. Going back to menu')

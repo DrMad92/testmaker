@@ -1,6 +1,4 @@
 import random
-import csv
-import shelve
 import sqlite3
 
 
