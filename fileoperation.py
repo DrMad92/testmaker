@@ -12,7 +12,7 @@ def view_dict():
     for cat in s.category_list:
         print('\nCategory: ' + cat + ':')
         print('\nId----Original----Translation\n')
-        for row in s.cur.execute('SELECT * FROM ' + cat):
+        for row in s.cur.execute('SELECT * FROM ' + cat + ' ORDER BY Id ASC'):
             print(row[0], row[1], row[2])
 
 
@@ -140,4 +140,31 @@ def edit_word():
     s.cur.execute(
         'UPDATE {0} SET Original = \"{1}\", Translation = \"{2}\" WHERE Id = \"{3}\"'.format(name, new_original,
                                                                                              new_translation, edit_id))
+    s.conn.commit()
+
+
+def delete_word():
+    get_categories()
+    print('Categories:')
+    for x in s.category_list:
+        print(x)
+
+    name = input('Choose category: ')
+    if name not in s.category_list:
+        print("Doesn't exist. Going back to menu")
+        return
+
+    print('\nCategory: ' + name + ':')
+    print('\nId----Original----Translation\n')
+    for row in s.cur.execute('SELECT * FROM ' + name):
+        print(row[0], row[1], row[2])
+
+    delete_id = str(input('\nEnter id to delete: '))
+    s.cur.execute('SELECT * FROM ' + name + ' WHERE Id = \"' + delete_id + '\"')
+    temp_list = s.cur.fetchall()
+    if len(temp_list) == 0:
+        print('Id does not exist. Going back to menu')
+        return
+
+    s.cur.execute('DELETE FROM ' + name + ' WHERE Id = \"' + delete_id + '\"')
     s.conn.commit()

@@ -31,7 +31,7 @@ def main():
             if quiz_input == 1:
                 q.start_quiz('category')  # Fix this
             elif quiz_input == 2:
-                q.start_quiz('all') # Fix this
+                q.start_quiz('all')  # Fix this
             else:
                 pass  # Go to main menu
         elif main_input == 2:
@@ -69,7 +69,7 @@ def main():
                 elif cat_input == 3:
                     fileop.edit_word()
                 elif cat_input == 4:
-                    fileop.delete_word()  # Fix this
+                    fileop.delete_word()
                 else:
                     pass  # Go to manage dictionary menu
             elif dict_input == 4:
