@@ -1,5 +1,6 @@
 import random
 import sqlite3
+import os
 
 
 class color:
@@ -18,13 +19,14 @@ class color:
 # Constants
 max_questions = 5  # must be less than total dictionary size
 max_choices = 5  # number of choices in one question
-filename = 'dictionary.db'
+path = 'lang_files'  # name of directory for creating new database (see readme)
+root = os.getcwd()
 
 # Globals
+conn = None  # connection handle
+cur = None  # cursor
 
-conn = sqlite3.connect(filename)
-cur = conn.cursor()
-
+lang_list = []
 category_list = []
 word_list = []
 answer_list = []

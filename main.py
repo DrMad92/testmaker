@@ -1,10 +1,26 @@
 import quiz as q
 import settings as s
-import fileoperation as fileop
+import file_operation as fileop
+import database_operation as dataop
 
 
 def main():
     print('Hello. This is Testmaker\n')
+    dataop.get_databases()
+    while True:
+        if len(s.lang_list) == 0:
+            print('Please add language')
+            dataop.create_database()
+        for lang in s.lang_list:
+            print(lang)
+        lang_choice = input("Choose language or type exit: ")
+        if lang_choice.lower() == 'exit':
+            exit()
+        elif lang_choice not in s.lang_list:
+            print('Does not exist.')
+        else:
+            dataop.connect_database(lang_choice + '.db')
+            break
 
     while True:
         fileop.get_categories()
@@ -13,7 +29,7 @@ def main():
             try:
                 print('\n1) Start quiz'
                       '\n2) Manage dictionary'
-                      '\n3) Statistics'
+                      '\n3) Change language'
                       '\n4) Exit')
                 main_input = int(input('\n' + s.color.BOLD + 'Choose an option:' + s.color.END))
             except:
@@ -78,7 +94,21 @@ def main():
             else:
                 pass  # Go to main menu
         elif main_input == 3:
-            pass  # Fix this - Statistics
+            lang_input = 0
+            while lang_input > 3 or lang_input < 1:
+                try:
+                    print('\n1) Change language'
+                          '\n2) Add new language'
+                          '\n3) Go back')
+                    lang_input = int(input('\n' + s.color.BOLD + 'Choose an option:' + s.color.END))
+                except:
+                    print('Enter valid option')
+            if lang_input == 1:
+                dataop.change_database()
+            elif lang_input == 2:
+                dataop.create_database()
+            else:
+                pass  # Go to main menu
         else:
             s.conn.close()
             return
