@@ -64,7 +64,7 @@ def create_database():
             word_temp_list = [line.rstrip().split(',') for line in f]
             i = 1
             for word in word_temp_list:
-                s.cur.execute("INSERT INTO '" + category_name[:-4] + "' VALUES (?,?,?)", (i, word[0], word[1]))
+                s.cur.execute("INSERT INTO '" + category_name[:-4] + "' VALUES (?,?,?)", (str(i), word[0], word[1]))
                 s.conn.commit()
                 i += 1
     return
