@@ -13,10 +13,10 @@ def main():
             dataop.create_database()
         for lang in s.lang_list:
             print(lang)
-        lang_choice = input("Choose language or type exit: ")
+        lang_choice = input("\nChoose language or type exit: ")
         if lang_choice.lower() == 'exit':
             exit()
-        elif lang_choice not in s.lang_list:
+        elif lang_choice.lower() not in s.lang_list:
             print('Does not exist.')
         else:
             dataop.connect_database(lang_choice + '.db')

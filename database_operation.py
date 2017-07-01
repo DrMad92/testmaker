@@ -4,7 +4,7 @@ import glob
 
 def get_databases():
     s.os.chdir(s.root)
-    print('List of available languages:')
+    print('List of available languages:\n')
     for filename in glob.glob('*.db'):
         if filename[:-3] not in s.lang_list:
             s.lang_list.append(filename[:-3])

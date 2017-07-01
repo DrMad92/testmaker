@@ -4,7 +4,7 @@ import settings as s
 def get_categories():
     for x in s.cur.execute("select name from sqlite_master where type = 'table'"):
         if x[0] not in s.category_list:
-            s.category_list.append(x[0])
+            s.category_list.append(x[0].lower())
 
 
 def view_dict():
