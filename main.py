@@ -7,6 +7,7 @@ def main():
     print('Hello. This is Testmaker\n')
 
     while True:
+        fileop.get_categories()
         main_input = 0
         while main_input > 4 or main_input < 1:
             try:
@@ -29,9 +30,9 @@ def main():
                 except:
                     print('Enter valid option')
             if quiz_input == 1:
-                q.start_quiz('category')  # Fix this
+                q.start_quiz('category')
             elif quiz_input == 2:
-                q.start_quiz('all')  # Fix this
+                q.start_quiz()
             else:
                 pass  # Go to main menu
         elif main_input == 2:

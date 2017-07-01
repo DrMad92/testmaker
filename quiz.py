@@ -1,8 +1,33 @@
 import settings as s
 
 
-def quiz():
+def start_quiz(choice='all'):
     s.random.seed()
+    if choice == 'category':
+        print('Categories:')
+        for x in s.category_list:
+            print(x)
+
+        user_cat = input('Choose category: ')
+        if user_cat not in s.category_list:
+            print('Does not exist: Going back to menu')
+            return
+
+        s.cur.execute('SELECT Original,Translation FROM ' + user_cat)
+        temp_list = s.cur.fetchall()
+        for x in temp_list:
+            word = {x[0]: x[1]}
+            if word not in s.word_list:
+                s.word_list.append(word)
+    elif choice == 'all':
+        for cat in s.category_list:
+            s.cur.execute('SELECT Original,Translation FROM ' + cat)
+            temp_list = s.cur.fetchall()
+            for x in temp_list:
+                word = {x[0]: x[1]}
+                if word not in s.word_list:
+                    s.word_list.append(word)
+
     question_list = s.random.sample(s.word_list, s.max_questions)
     i = 1
     while len(question_list) > 0:

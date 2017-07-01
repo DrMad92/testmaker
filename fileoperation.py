@@ -8,7 +8,6 @@ def get_categories():
 
 
 def view_dict():
-    get_categories()
     for cat in s.category_list:
         print('\nCategory: ' + cat + ':')
         print('\nId----Original----Translation\n')
@@ -17,7 +16,6 @@ def view_dict():
 
 
 def add_category():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
@@ -32,7 +30,6 @@ def add_category():
 
 
 def delete_category():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
@@ -47,7 +44,6 @@ def delete_category():
 
 
 def rename_category():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
@@ -67,7 +63,6 @@ def rename_category():
 
 
 def add_word():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
@@ -107,7 +102,6 @@ def add_word():
 
 
 def edit_word():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
@@ -144,7 +138,6 @@ def edit_word():
 
 
 def delete_word():
-    get_categories()
     print('Categories:')
     for x in s.category_list:
         print(x)
