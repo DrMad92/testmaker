@@ -19,9 +19,8 @@ Text files must be in a form of a list. First word original, after comma transla
 Example: folder named 'french'. Inside txt file named 'body.txt'.
 
 Text file:
-
-`tête,head
-
+```
+tête,head
 voix,voice
-
-main,hand`
+main,hand
+```
