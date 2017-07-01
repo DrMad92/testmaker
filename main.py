@@ -2,6 +2,7 @@ import quiz as q
 import settings as s
 import file_operation as fileop
 import database_operation as dataop
+import sys
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
             print(lang)
         lang_choice = input("\nChoose language or type exit: ")
         if lang_choice.lower() == 'exit':
-            exit()
+            sys.exit()
         elif lang_choice.lower() not in s.lang_list:
             print('Does not exist.')
         else:
