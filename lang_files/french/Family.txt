@@ -1,0 +1,31 @@
+enfant,child
+femme,wife
+famille,family
+parent,parent
+père,father
+fille,daughter
+mère,mother
+fils,son
+frère,brother
+mariage,marriage
+sœur,sister
+mari,husband
+époux,male spouse
+maman,mommy
+bébé,baby
+papa,daddy
+aîné,eldest
+ancêtre,ancestor
+cousin,cousin
+oncle,uncle
+descendant,descendant
+grand-père,grandfather
+grand-mère,grandmother
+tante,aunt
+héritier,heir
+jumeau,twin
+parrain,godfather
+grands-parents,grandparents
+petits-enfants,grandchildren
+petit-fils,grandson
+épouse,female spouse

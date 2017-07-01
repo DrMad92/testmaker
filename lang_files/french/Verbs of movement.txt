@@ -1,0 +1,51 @@
+prendre,to take
+aller,to go
+venir,to come
+passer,to pass
+suivre,to follow
+partir,to leave
+arriver,to arrive
+sortir,to go out
+mener,to lead
+chercher,to look for
+entrer,to enter
+apporter,to bring
+atteindre,to reach
+importer,to import
+tirer,to pull
+arrêter,to stop
+avancer,to advance
+élever,to lift
+poursuivre,to pursue
+conduire,to drive
+quitter,to leave
+tomber,to fall
+amener,to bring
+tourner,to turn
+déplacer,to move
+accompagner,to accompany
+échapper,to escape
+retourner,to return
+ramener,to bring back
+emporter,to take
+étendre,to spread out
+jeter,to throw
+rapprocher,to bring closer
+asseoir,to sit
+visiter,to visit
+courir,to run
+franchir,to get over
+écarter,to separate
+marcher,to walk
+éloigner,to move away
+approcher,to approach
+descendre,to go down
+circuler,to drive
+progresser,to progress
+bouger,to move
+reculer,to move back
+transporter,to transport
+parcourir,to cover
+accélérer,to accelerate
+emmener,take
+transférer,to transfer

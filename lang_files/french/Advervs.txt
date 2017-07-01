@@ -1,0 +1,78 @@
+beaucoup,much
+maintenant,now
+pourquoi,why
+comment,how
+oui,yes
+juste,only just
+vraiment,really
+simplement,simply
+combien,how much
+exactement,exactly
+tellement,so much
+absolument,absolutely
+complètement,completely
+certainement,certainly
+clairement,clearly
+justement,exactly
+évidemment,obviously
+malheureusement,unfortunately
+extrêmement,extremely
+effectivement,effectively
+là-bas,over there
+ben,well
+là-dessus,on top
+personnellement,personally
+énormément,enormously
+brièvement,briefly
+loin,far
+presque,almost
+derrière,behind
+guère,hardly
+naturellement,naturally
+soudain,suddenly
+aussitôt,immediately
+autrefois,in the past
+vivement,sharply
+debout,standing
+lentement,slowly
+volontiers,with pleasure
+proprement,cleanly
+tantôt,sometimes
+dedans,inside
+longuement,at length
+quelquefois,sometimes
+doucement,gently
+brusquement,abruptly
+par-dessus,over
+nullement,nothing
+économiquement,economically
+delà,beyond
+assurément,most certainly
+infiniment,infinitely
+jadis,formerly
+lors,at the time of
+notamment,notably
+environ,about
+désormais,henceforth
+largement,widely
+arrière,back
+voire,indeed
+généralement,generally
+fortement,strongly
+principalement,principally
+normalement,normally
+nettement,clearly
+légèrement,slightly
+officiellement,officially
+progressivement,progressively
+éventuellement,possibly
+parallèlement,in parallel
+automatiquement,automatically
+respectivement,respectively
+quasiment,almost
+précédemment,previously
+vraisemblablement,most probably
+au-dessous,underneath
+sensiblement,more or less
+simultanément,simultaneously
+initialement,initially

@@ -1,0 +1,60 @@
+dire,to say
+demander,to ask for
+parler,to speak
+entendre,to hear
+appeler,to call
+répondre,to answer
+poser,to pose, ask
+offrir,to offer
+expliquer,to explain
+refuser,to efuse
+lire,to read
+représenter,to represent
+assurer,to assure
+proposer,to propose
+ajouter,to add
+écrire,to write
+défendre,to forbid
+souhaiter,to wish
+écouter,to listen to
+exprimer,to express
+déclarer,to declare
+annoncer,to announce
+interdire,to forbid
+noter,to note
+convaincre,to convince
+signifier,to mean
+indiquer,to indicate
+nommer,to call
+inviter,to invite
+répéter,to repeat
+prouver,to prove
+admettre,to admit
+affirmer,to affirm
+prononcer,to pronounce
+exiger,to require
+intervenir,to intervene
+discuter,to discuss
+adresser,to address
+préciser,to clarify
+publier,to publish
+désigner,to designate
+signer,to sign
+révéler,to reveal
+souligner,to stress
+promettre,to promise
+remarquer,to remark
+condamner,to condemn
+justifier,to justify
+raconter,to tell
+insister,to insist
+définir,to define
+commander,to command
+manifester,to display
+autoriser,to authorize
+inscrire,to register, write down
+confirmer,to confirm
+citer,to quote
+interroger,to question, interrogate
+impliquer,to imply, implicate
+traduire,to translate
