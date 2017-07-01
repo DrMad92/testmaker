@@ -16,7 +16,10 @@ Language folder must contain `.txt` files for every specific topic.
 
 Text files must be in a form of a list. First word original, after comma translation.
 
-Example: folder named `french`. Inside txt file named `body.txt`.
+
+Example:
+
+folder named `french`. Inside txt file named `body.txt`.
 
 Text file:
 ```
