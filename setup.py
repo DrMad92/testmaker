@@ -1,7 +1,7 @@
 from cx_Freeze import setup, Executable
 
 build_exe_options = {"packages": ["database_operation", "file_operation", "quiz", "settings"],
-                     "include_files": ["lang_files"]}
+                     "include_files": ["lang_files", "french.db"]}
 
 setup(name="testmaker",
       version="1.0",

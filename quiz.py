@@ -31,7 +31,7 @@ def start_quiz(choice='all'):
     question_list = s.random.sample(s.word_list, s.max_questions)
     i = 1
     while len(question_list) > 0:
-        print('\n' + s.col.Fore.BLUE + str(i) + ': ', end='')
+        print('\n' + s.col.Fore.YELLOW + s.col.Style.BRIGHT + str(i) + ': ', end='')
         question, correct_answer = list(question_list.pop().items())[0]
         choices = [correct_answer]
         while len(choices) < s.max_choices:
@@ -47,7 +47,9 @@ def start_quiz(choice='all'):
         user_input = 0
         while user_input > s.max_choices or user_input < 1:
             try:
-                user_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an answer:' + s.col.Style.RESET_ALL))
+                print('\n' + s.col.Style.BRIGHT)
+                user_input = int(input('Choose an answer:'))
+                print(s.col.Style.RESET_ALL)
             except:
                 print('Enter valid answer')
 
@@ -69,12 +71,13 @@ def start_quiz(choice='all'):
         else:
             wrong_answers += 1
 
-    print('\nResult: True', true_answers, 'False', wrong_answers, '\n')
+    print('\nResult: True', s.col.Style.BRIGHT + s.col.Fore.GREEN + str(true_answers) + s.col.Style.RESET_ALL,
+          'False', s.col.Style.BRIGHT + s.col.Fore.RED + str(wrong_answers) + s.col.Style.RESET_ALL, '\n')
 
     for x in s.answer_list:
         if not x['correct']:
-            print(x['question'], s.col.Fore.RED + 'WRONG!' + s.col.Style.RESET_ALL, 'Correct answer:',
-                  x['correct_answer'])
+            print(s.col.Style.BRIGHT, x['question'], s.col.Fore.RED + 'WRONG!' + s.col.Style.RESET_ALL,
+                  'Correct answer:', s.col.Style.BRIGHT, x['correct_answer'], s.col.Style.RESET_ALL)
 
     del s.word_list[:]
     del s.answer_list[:]
