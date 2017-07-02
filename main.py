@@ -33,7 +33,7 @@ def main():
                       '\n2) Manage dictionary'
                       '\n3) Change language'
                       '\n4) Exit')
-                main_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
+                main_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an option:' + s.col.Style.RESET_ALL))
             except:
                 print('Enter valid option')
 
@@ -45,7 +45,7 @@ def main():
                           '\n2) All'
                           '\n3) Change number of questions'
                           '\n4) Go back')
-                    quiz_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
+                    quiz_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an option:' + s.col.Style.RESET_ALL))
                 except:
                     print('Enter valid option')
             if quiz_input == 1:
@@ -74,7 +74,7 @@ def main():
                           '\n3) Edit category'
                           '\n4) Delete category'
                           '\n5) Go back')
-                    dict_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
+                    dict_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an option:' + s.col.Style.RESET_ALL))
                 except:
                     print('Enter valid option')
             if dict_input == 1:
@@ -90,7 +90,7 @@ def main():
                               '\n3) Edit word'
                               '\n4) Delete word'
                               '\n5) Go back')
-                        cat_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
+                        cat_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an option:' + s.col.Style.RESET_ALL))
                     except:
                         print('Enter valid option')
                 if cat_input == 1:
@@ -114,7 +114,7 @@ def main():
                     print('\n1) Change language'
                           '\n2) Add new language'
                           '\n3) Go back')
-                    lang_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
+                    lang_input = int(input('\n' + s.col.Fore.GREEN + 'Choose an option:' + s.col.Style.RESET_ALL))
                 except:
                     print('Enter valid option')
             if lang_input == 1:
