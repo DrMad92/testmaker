@@ -20,7 +20,7 @@ def disconnect_database():
     try:
         s.conn.close()
     except AttributeError as e:
-        print(e)
+        pass
 
 
 def change_database():
