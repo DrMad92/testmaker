@@ -39,11 +39,12 @@ def main():
 
         if main_input == 1:
             quiz_input = 0
-            while quiz_input > 3 or quiz_input < 1:
+            while quiz_input > 4 or quiz_input < 1:
                 try:
                     print('\n1) Choose category'
                           '\n2) All'
-                          '\n3) Go back')
+                          '\n3) Change number of questions'
+                          '\n4) Go back')
                     quiz_input = int(input('\n' + s.col.Style.BRIGHT + 'Choose an option:' + s.col.Style.RESET_ALL))
                 except:
                     print('Enter valid option')
@@ -51,6 +52,17 @@ def main():
                 q.start_quiz('category')
             elif quiz_input == 2:
                 q.start_quiz()
+            elif quiz_input == 3:
+                print('Current number of questions:', s.max_questions)
+                try:
+                    s.max_questions = int(input('Enter new number (max 20):'))
+                except:
+                    print('Enter valid number:')
+                while s.max_questions > 20 or s.max_questions < 1:
+                    try:
+                        s.max_questions = int(input('Enter new number (max 20):'))
+                    except:
+                        print('Enter valid number:')
             else:
                 pass  # Go to main menu
         elif main_input == 2:
