@@ -9,7 +9,7 @@ def get_categories():
 
 def view_dict():
     for cat in s.category_list:
-        print('\nCategory ' + s.color.BOLD + cat + s.color.END + ':')
+        print('\nCategory ' + s.col.Style.BRIGHT + cat + s.col.Style.RESET_ALL + ':')
         print('\nId - Original   --   Translation\n')
         for row in s.cur.execute("SELECT * FROM '" + cat + "' ORDER BY Original ASC"):
             print('{:<3}- {:<15}-- {:15}'.format(row[0], row[1], row[2]))
