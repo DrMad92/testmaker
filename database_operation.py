@@ -11,6 +11,7 @@ def get_databases():
 
 
 def connect_database(database):
+    disconnect_database()
     del s.category_list[:]
     s.conn = s.sqlite3.connect(database)
     s.cur = s.conn.cursor()
@@ -37,7 +38,7 @@ def change_database():
 
 def create_database():
     s.os.chdir(s.root)
-    print('List of available languages to install:')
+    print('List of available languages to install:\n')
     s.os.chdir(s.path)
     temp_list = []
     for filename in s.os.listdir(s.os.getcwd()):
@@ -47,7 +48,7 @@ def create_database():
             print(filename)
             temp_list.append(filename)
 
-    print('Choose from:')
+    print('\nChoose from:\n')
     for x in temp_list:
         print(x)
     user_choice = input('Choose language:')
