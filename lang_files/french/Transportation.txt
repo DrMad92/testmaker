@@ -1,0 +1,36 @@
+train,train
+rue,street
+voie,road
+voiture,car
+transport,transportation
+bateau,boat
+port,harbor
+avion,plane
+navire,ship
+vol,flight
+véhicule,vehicle
+aéroport,airport
+automobile,automobile
+camion,truck
+gare,train station
+hélicoptère,helicopter
+routier,truck driver
+missile,missile
+ballon,ball
+sous-marin,submarine
+autoroute,freeway
+transit,transit
+bus,bus
+vapeur,steamship
+autobus,bus
+taxi,taxi
+jet,jet
+auto,car
+vélo,bicycle
+rail,rail
+navette,shuttle
+boulevard,boulevard
+garage,garage
+wagon,wagon
+fusée,rocket
+ascenseur,elevator
